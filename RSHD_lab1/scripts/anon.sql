@@ -1,6 +1,6 @@
 do $$
 declare
-arg_target_table text = 'Заказ';
+    arg_target_table text = 'Заказ';
     var_row record;
     var_column_max_len record;
     var_type_str text;
@@ -67,6 +67,3 @@ begin
     end loop;
 end;
 $$ language plpgsql;
-
-
-select * from information_schema.columns;
