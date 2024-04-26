@@ -9,4 +9,5 @@ mkdir $PGDATA
 
 initdb --locale=$PGLOCALE --encoding=$PGENCODE --username=$PGUSERNAME
 
-# pg_ctl -D /var/db/postgres6/yqi56 -l log start
+pg_ctl -D /var/db/postgres6/yqi56 -l logfile start
+
