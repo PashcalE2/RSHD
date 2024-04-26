@@ -30,8 +30,18 @@ create table street (
 tablespace ts_uzb16;
 
 create role s311817 login password '123';
-grant select, insert, update, delete on table sickorange, building, street to s311817;
+grant select, insert, update, delete 
+on table sickorange, building, street 
+to s311817;
 
 -- bash
 -- psql -h pg100 -p 9142 -d sickorangecity -U s311817
 --
+
+select * from pg_tablespace;
+
+select relname from 
+pg_class pgc inner join pg_tablespace pgts
+on pgc.reltablespace = pgts.oid;
+
+-- select relname from pg_class where reltablespace in (select oid from pg_tablespace);
