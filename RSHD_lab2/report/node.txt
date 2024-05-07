@@ -1,2 +1,0 @@
-pg100:postgres6:HYJ0HI9n
-ssh -J s@helios.cs.ifmo.ru:2222 postgres6@pg100

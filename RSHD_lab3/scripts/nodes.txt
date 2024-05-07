@@ -1,7 +1,0 @@
-# Base
-pg100:postgres6:HYJ0HI9n
-ssh -J s@helios.cs.ifmo.ru:2222 postgres6@pg100
-
-# Reserved
-pg191:postgres2:qsz0mJDn
-ssh -J s@helios.cs.ifmo.ru:2222 postgres2@pg191
