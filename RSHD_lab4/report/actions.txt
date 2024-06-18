@@ -1,0 +1,20 @@
+Creation
+1) create db
+2) basebackup
+3) standby.signal (other confs in postgresql.conf)
+4) select * from pg_create_physical_replication_slot('hotstandby');
+5) config pgpool '/etc/pgpool2/'
+6) run main db, standby db, pgpool (from su - postgres)
+
+Recovery
+1) disconnect main
+2) auto failover by pgpool
+3) handle requests
+4) connect main
+5) pg_rewind --source-server='host=10.0.2.5 user=postgres' --target-pgdata=$PGDATA (postgres is rewindable user)
+6) stop servers
+7) touch standby.signal
+8) start main, select * from pg_create_physical_replication_slot('hotstandby');
+9) start hotstandby
+10) run pgpool
+11) check connection / changes
